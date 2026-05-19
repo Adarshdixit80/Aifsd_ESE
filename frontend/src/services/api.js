@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-// ─── API Base URL ─────────────────────────────────────────────────────────────
-// In development: Vite proxy handles /api -> localhost:5000/api
-// In production:  Uses VITE_API_URL environment variable
+// Uses VITE_API_URL from .env if set, otherwise uses the deployed backend.
+// Local dev: set VITE_API_URL=http://localhost:5000/api in frontend/.env
+// Production: set VITE_API_URL=https://aifsd-ese-7uj7.onrender.com/api on Render, OR leave blank (hardcoded fallback below)
 const API_BASE_URL =
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api' : 'https://aifsd-ese-7uj7.onrender.com/api');
+  import.meta.env.VITE_API_URL || 'https://aifsd-ese-7uj7.onrender.com/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
