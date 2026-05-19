@@ -5,7 +5,7 @@ import axios from 'axios';
 // In production:  Uses VITE_API_URL environment variable
 const API_BASE_URL =
   import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? '/api' : 'https://your-backend-name.onrender.com/api');
+  (import.meta.env.DEV ? '/api' : 'https://aifsd-ese-7uj7.onrender.com/api');
 
 const api = axios.create({
   baseURL: API_BASE_URL,
